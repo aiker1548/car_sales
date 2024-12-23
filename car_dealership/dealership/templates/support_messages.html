@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}Сообщения поддержки{% endblock %}
+
+{% block content %}
+<h1>Сообщения пользователей</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Пользователь</th>
+            <th>Email</th>
+            <th>Сообщение</th>
+            <th>Дата создания</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for message in messages %}
+        <tr>
+            <td>
+                {% if message.user %}
+                    {{ message.user.username }}
+                {% else %}
+                    Аноним
+                {% endif %}
+            </td>
+            <td>{{ message.email }}</td>
+            <td>{{ message.message }}</td>
+            <td>{{ message.created_at }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

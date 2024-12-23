@@ -1,0 +1,73 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+}
+
+
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+}
+
+.cars {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.car-card {
+    border: 1px solid #ddd;
+    padding: 10px;
+    width: 300px;
+}
+
+nav {
+    display: flex; /* Используем Flexbox для выравнивания */
+    justify-content: space-between; /* Пространство между блоками */
+    align-items: center; /* Выравнивание по вертикали */
+}
+
+nav ul {
+    list-style: none; /* Убираем маркеры у списка */
+    padding: 0;
+    margin: 0;
+    display: flex; /* Делаем элементы списка в одну строку */
+    gap: 15px; /* Расстояние между элементами */
+}
+
+nav ul.right-nav {
+    margin-left: auto; /* Сдвигаем правый список в конец */
+}
+
+nav li a {
+    text-decoration: none; /* Убираем подчеркивание */
+    color: #000; /* Цвет ссылок */
+    font-weight: bold; /* Жирный текст */
+}
+
+nav li a:hover {
+    color: #007BFF; /* Цвет при наведении */
+}

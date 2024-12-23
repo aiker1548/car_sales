@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    environment:
+      - DEBUG=1
+      - DJANGO_SETTINGS_MODULE=car_dealership.settings
+    depends_on:
+      - db
+    networks:
+      - car_dealership_network  # Указываем сеть
+
+  db:
+    image: sqlite:13
+    volumes:
+      - sqlite_data:/var/lib/sqlite/data/
+    environment:
+      sqlite_DB: car_dealership
+      sqlite_USER: user
+      sqlite_PASSWORD: password
+    networks:
+      - car_dealership_network  # Указываем сеть
+
+volumes:
+  sqlite_data:
+
+networks:
+  car_dealership_network:  

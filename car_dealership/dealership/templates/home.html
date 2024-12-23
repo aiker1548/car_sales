@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}Главная{% endblock %}
+
+{% block content %}
+<style>
+.car-card img {
+    width: 200px;  /* Задайте желаемую ширину */
+    height: 150px; /* Задайте желаемую высоту */
+    object-fit: cover; /* Обеспечивает сохранение пропорций изображения */
+}
+</style>
+
+<h1>Список машин</h1>
+<div class="cars">
+    {% for car in cars %}
+        <div class="car-card">
+            <img src="{{ car.pic }}"/>
+            <h2>{{ car.name }}</h2>
+            <p>{{ car.description }}</p>
+            <p>Цена: {{ car.price }} ₽</p>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}
